@@ -1,0 +1,45 @@
+<?xml  version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiliao.mapper.RenshiMapper">
+
+
+<resultMap id="tDepartMap" type="tDepart">
+    <id property="idDepart" column="id_depart"></id>
+    <result property="nameDepart" column="name_depart"></result>
+
+    <!--外键-->
+    <result property="idAdmin"  column="id_admin"></result>
+    <result property="nameAdmin" column="name_admin"></result>
+</resultMap>
+
+    <resultMap id="tStationMap" type="tStation">
+        <id property="idStation" column="id_station"></id>
+        <result property="nameStation" column="name_station"></result>
+        <result property="departStation" column="depart_station"></result>
+    </resultMap>
+
+    <resultMap id="tEmpMap" type="tEmp">
+        <id property="idEmp" column="id_emp"></id>
+        <result property="nameEmp" column="name_emp"></result>
+        <result property="sexEmp" column="sex_emp"></result>
+        <result property="idStation"  column="id_station"></result>
+        <result property="nameStation" column="name_station"></result>
+    </resultMap>
+
+
+
+    <select id="queryAllDepart" resultMap="tDepartMap">
+    select * from depart
+</select>
+
+    <select id="queryAllStation" resultMap="tStationMap">
+        select * from station
+    </select>
+
+<select id="queryAllEmp" resultMap="tEmpMap">
+    select * from emp
+</select>
+
+</mapper>

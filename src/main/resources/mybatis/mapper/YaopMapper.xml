@@ -1,0 +1,47 @@
+<?xml  version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yiliao.mapper.YaopMapper">
+    <resultMap id="tMedicineMap" type="tMedicine">
+        <id property="idMedicine" column="id_medicine"></id>
+        <result property="nameMedicine" column="name_medicine"></result>
+        <result property="classicMedicine" column="classic_medicine"></result>
+        <result property="tag" column="tag"></result>
+    </resultMap>
+    
+    <resultMap id="tMedcenterMap" type="tMedcenter">
+        <id property="idMedcenter" column="id_medcenter"></id>
+        <result property="nameMedcenter" column="name_medcenter"></result>
+        <result property="addressMedcenter" column="address_medcenter"></result>
+        <result property="idAdmin" column="id_admin"></result>
+        <result property="nameAdmin" column="name_admin"></result>
+        <result property="telMedcenter" column="tel_medcenter"></result>
+    </resultMap>
+
+    <resultMap id="tEmpMap" type="tEmp">
+        <id property="idEmp" column="id_emp"></id>
+        <result property="nameEmp" column="name_emp"></result>
+        <result property="sexEmp" column="sex_emp"></result>
+        <result property="idStation"  column="id_station"></result>
+        <result property="nameStation" column="name_station"></result>
+    </resultMap>
+
+
+
+
+    <select id="queryAllYaop" resultMap="tMedicineMap">
+        select * from medicine
+    </select>
+
+    <select id="queryAllMedcenter" resultMap="tMedcenterMap">
+        select * from medcenter
+    </select>
+
+    <select id="queryAllEmp" resultMap="tEmpMap">
+       select * from emp
+    </select>
+
+
+
+</mapper>
